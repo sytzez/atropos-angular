@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'atropos',
-    template: `
-        <p>
-            atropos-angular works!
-        </p>
-    `,
+    templateUrl: 'atropos.component.html',
     styleUrls: ['atropos.component.scss'],
 })
 export class AtroposComponent implements OnInit {
