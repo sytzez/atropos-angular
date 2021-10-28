@@ -3,5 +3,6 @@
   "dest": "../../dist/atropos-angular",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["atropos"]
 }
