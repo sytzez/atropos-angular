@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
             atropos-angular works!
         </p>
     `,
-    styles: []
+    styleUrls: ['atropos.component.scss'],
 })
 export class AtroposComponent implements OnInit {
 
