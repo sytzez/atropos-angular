@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "atropos-angular": {
+      "projectType": "library",
+      "root": "projects/atropos-angular",
+      "sourceRoot": "projects/atropos-angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/atropos-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/atropos-angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/atropos-angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/atropos-angular/src/test.ts",
+            "tsConfig": "projects/atropos-angular/tsconfig.spec.json",
+            "karmaConfig": "projects/atropos-angular/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "atropos-angular-workspace"
