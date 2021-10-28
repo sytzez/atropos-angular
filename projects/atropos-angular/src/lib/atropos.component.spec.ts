@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AtroposAngularComponent } from './atropos-angular.component';
+import { AtroposComponent } from './atropos.component';
 
 describe('AtroposAngularComponent', () => {
-    let component: AtroposAngularComponent;
-    let fixture: ComponentFixture<AtroposAngularComponent>;
+    let component: AtroposComponent;
+    let fixture: ComponentFixture<AtroposComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [AtroposAngularComponent]
+            declarations: [AtroposComponent]
         })
             .compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(AtroposAngularComponent);
+        fixture = TestBed.createComponent(AtroposComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

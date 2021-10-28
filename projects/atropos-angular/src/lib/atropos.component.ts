@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
     `,
     styles: []
 })
-export class AtroposAngularComponent implements OnInit {
+export class AtroposComponent implements OnInit {
 
     constructor() {
     }
