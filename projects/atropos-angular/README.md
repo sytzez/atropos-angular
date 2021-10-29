@@ -1,24 +1,71 @@
-# AtroposAngular
+# Atropos for Angular
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+This is merely an Angular wrapper around [Atropos](https://atroposjs.com/).
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project atropos-angular` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project atropos-angular`.
-> Note: Don't forget to add `--project atropos-angular` or else it will be added to the default project in your `angular.json` file. 
+Install the package:
 
-## Build
+```bash
+npm install ...
+```
 
-Run `ng build atropos-angular` to build the project. The build artifacts will be stored in the `dist/` directory.
+Add `AtroposModule` to your imports:
 
-## Publishing
+```typescript
+import { AtroposModule } from '...';
 
-After building your library with `ng build atropos-angular`, go to the dist folder `cd dist/atropos-angular` and run `npm publish`.
+@NgModule({
+    // ...
+    imports: [
+        // ...
+        AtroposModule,
+    ],
+    // ...
+})
+```
 
-## Running unit tests
+## Usage
 
-Run `ng test atropos-angular` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You can use the `atropos` component inside your templates:
 
-## Further help
+```angular2html
+<atropos>
+    // ... Your parallax content
+</atropos>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Make sure the `atropos` element has some styling for it to work properly:
+
+```css
+atropos {
+    width: 320px;
+    height: 160px;
+}
+```
+
+## Properties and events
+
+Consult the [Official Atropos Docs](https://atroposjs.com/docs#parameters) for a list of properties and events.
+
+## Slots
+
+In order to place elements in certain containers within the atropos HTML layout,
+the following slots are available:
+
+- `root`
+- `scale`
+- `rotate`
+
+You can place elements in those slots like so:
+
+```angular2html
+<atropos>
+    <div slot="root"><!-- Inside the root container --></div>
+    <div slot="scale"><!-- Inside the scale container --></div>
+    <div slot="rotate"><!-- Inside the rotate container --></div>
+    <div><!-- Inside the inner container --></div>
+</atropos>
+```
+
+Consult the [Official Atropos Docs](https://atroposjs.com/docs#html-layout) for more information.
