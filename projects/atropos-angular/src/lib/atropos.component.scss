@@ -1,1 +1,10 @@
 @import '~atropos/atropos.css';
+
+:host {
+    display: block;
+}
+
+.atropos {
+    width: 100%;
+    height: 100%;
+}
