@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'atropos-angular-workspace';
+
+    public log(event: any): void {
+        console.log(event);
+    }
 }
