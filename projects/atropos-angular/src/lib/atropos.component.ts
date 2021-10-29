@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
-import Atropos, { AtroposInstance } from 'atropos';
+import Atropos, { AtroposInstance, AtroposOptions } from 'atropos';
 
 export interface RotateEvent {
     x: number;
@@ -76,13 +76,25 @@ export class AtroposComponent implements AfterViewInit, OnDestroy {
     protected onRotate = new EventEmitter<RotateEvent>();
 
     @ViewChild('element', { static: true })
-    protected element!: ElementRef<HTMLDivElement>;
+    protected element?: ElementRef<HTMLDivElement>;
 
     protected atropos?: AtroposInstance;
 
+    public get isActive(): boolean | undefined {
+        return this.atropos?.isActive;
+    }
+
+    public get params(): AtroposOptions | undefined {
+        return this.atropos?.params;
+    }
+
+    public get atroposInstance(): AtroposInstance | undefined {
+        return this.atropos;
+    }
+
     public ngAfterViewInit(): void {
         this.atropos = Atropos({
-            el: this.element.nativeElement,
+            el: this.element!.nativeElement,
             activeOffset: this.activeOffset,
             alwaysActive: this.alwaysActive,
             duration: this.duration,
