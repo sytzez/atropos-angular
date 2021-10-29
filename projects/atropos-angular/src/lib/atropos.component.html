@@ -1,6 +1,12 @@
 <div class="atropos" #element>
+    <ng-content select="[slot=root]"></ng-content>
+
     <div class="atropos-scale">
+        <ng-content select="[slot=scale]"></ng-content>
+
         <div class="atropos-rotate">
+            <ng-content select="[slot=rotate]"></ng-content>
+
             <div class="atropos-inner">
                 <ng-content></ng-content>
             </div>
