@@ -16,6 +16,9 @@ export type RotateTouch = boolean | 'scroll-x' | 'scroll-y';
 export class AtroposComponent implements AfterViewInit, OnDestroy {
 
     @Input()
+    protected eventsRef?: ElementRef;
+
+    @Input()
     protected activeOffset: number = 50;
 
     @Input()
@@ -95,6 +98,8 @@ export class AtroposComponent implements AfterViewInit, OnDestroy {
     public ngAfterViewInit(): void {
         this.atropos = Atropos({
             el: this.element!.nativeElement,
+            eventsEl: this.eventsRef?.nativeElement,
+
             activeOffset: this.activeOffset,
             alwaysActive: this.alwaysActive,
             duration: this.duration,
@@ -112,6 +117,7 @@ export class AtroposComponent implements AfterViewInit, OnDestroy {
             shadowOffset: this.shadowOffset,
             shadowScale: this.shadowScale,
             highlight: this.highlight,
+
             onEnter: () => this.onEnter.emit(),
             onLeave: () => this.onLeave.emit(),
             onRotate: (x, y) => this.onRotate.emit({ x, y }),
