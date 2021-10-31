@@ -1,19 +1,19 @@
 # Atropos for Angular
 
-This is merely an Angular wrapper around [Atropos](https://atroposjs.com/).
+This is merely [Atropos](https://atroposjs.com/) wrapped by an Angular component.
 
 ## Installation
 
 Install the package:
 
 ```bash
-npm install ...
+npm install atropos-angular
 ```
 
 Add `AtroposModule` to your imports:
 
 ```typescript
-import { AtroposModule } from '...';
+import { AtroposModule } from 'atropos-angular';
 
 @NgModule({
     // ...
